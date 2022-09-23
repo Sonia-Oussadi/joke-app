@@ -4,17 +4,17 @@ orbs:
   node: circleci/node@5.0.2
 
 workflows:
-  node-test:
+  build:
     jobs:
       - node/test:
-        filters:
-          branches:
-            only:
-              - circleci
+          filters:
+            branches:
+              only:
+                - circleci
 
       - node/run:
-        npm-run: build
-        filters:
-          branches:
-            only:
-              - circleci
+          npm-run: build
+          filters:
+            branches:
+              only:
+                - circleci
